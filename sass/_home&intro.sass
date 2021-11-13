@@ -1,0 +1,90 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: 0
+     
+body
+    background-color: #ddd
+    font-family: arial
+    .home
+        height: 300vh
+        background-color: rgb(0, 110, 255)
+    .center
+            background: linear-gradient(180deg, rgb(197, 28, 183) 0%, rgb(0, 110, 255) 100%)
+            // border: 2px solid black
+            width: 100%
+            position: fixed
+            top: 0
+            left: 0
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            z-index: 1
+            transition: .3s
+            h1
+                font-size: $h1size
+                // opacity: 0
+                display: none
+                transition: .3s
+            span
+                display: block
+                margin-top: 8vh
+                font-size: $spansize
+                font-weight: 700
+                text-transform: uppercase
+                letter-spacing: 4px
+                color: rgb(231, 16, 213) 
+                text-decoration: overline
+            a
+                margin-top: 10vh
+                // opacity: 0
+                display: none
+                transition: .2s
+                width: 30%
+                text-align: center
+                font-size: $asize
+                text-decoration: none
+                color: black
+                text-transform: uppercase
+                border: 2px solid black
+                padding: 5px 20px
+                cursor: pointer
+                animation: border 1s infinite linear
+                &:hover 
+                    background-color: black
+                    color: rgb(197, 28, 183) 
+    .introduce
+        left: 0
+        top: 0
+        height: 100vh
+        width: 100%
+        display: none
+        min-height: 100vh  
+        background-color: red
+        transition: 1s
+        z-index: 1
+        input
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%,-50%)
+            font-size: 40px
+            padding: 2vh 0
+            text-align: center
+            text-transform: uppercase
+    .page 
+        display: none
+        background-color: yellow
+        min-height: 100vh      
+        overflow-x: hidden  
+        text-align: center
+        
+        
+@keyframes border
+    0%
+        box-shadow: 0 0 0 1px rgb(197, 28, 183)       
+    50%
+        box-shadow: 0 0 3px 10px rgb(197, 28, 183)
+    100%
+        box-shadow: 0 0 0 1px rgb(197, 28, 183)            
