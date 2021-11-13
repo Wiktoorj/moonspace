@@ -9,7 +9,7 @@ const page = document.querySelector('.page')
 
 const showIntroduce = () => {
     home.style.display = 'none';
-    // introduce.style.display = 'block';
+    introduce.style.display = 'block';
     homeCenter.style.left = '-102%';
 }
 

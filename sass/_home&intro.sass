@@ -62,7 +62,7 @@ body
         top: 0
         height: 100vh
         width: 100%
-        // display: none
+        display: none
         // background-color: red
         background: linear-gradient(0deg, rgb(197, 28, 183) 20%, rgb(0, 110, 255) 100%)
         transition: 1s
@@ -72,27 +72,35 @@ body
             top: 50%
             left: 50%
             transform: translate(-50%,-50%)
-            font-size: 32px
+            font-size: 22px
             padding: 4vw 7vw
             text-align: center
             text-transform: uppercase
-            box-shadow: 0 0 3px 3px yellow
+            // box-shadow: 0 0 3px 3px yellow
             color: rgb(197, 28, 183)
+            font-weight: 700
+            // border:2px solid black
+            animation: border 1s infinite linear
+            // letter-spacing: 5px
+        ::placeholder
+            color: #555
+            font-weight: 700
+            
     .page 
         display: none
         background-color: yellow
         height: 100vh
         max-width: 100%
         padding: 5vh 5vw
-        overflow: hidden
+        // overflow: hidden
         // overflow-x: hidden  
         text-align: center
         
 @keyframes grow
     0%
-        font-size: 55px
+        font-size: 35px
     100%
-        font-size: 75px
+        font-size: 48px
 @keyframes home
     0%
         top: -100%

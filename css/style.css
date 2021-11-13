@@ -48,14 +48,14 @@ body .center {
 }
 
 body .center h1 {
-  font-size: 55px;
+  font-size: 35px;
   text-transform: uppercase;
 }
 
 body .center span {
   display: block;
   margin-top: 8vh;
-  font-size: 70px;
+  font-size: 45px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -96,6 +96,7 @@ body .introduce {
   top: 0;
   height: 100vh;
   width: 100%;
+  display: none;
   background: -webkit-gradient(linear, left bottom, left top, color-stop(20%, #c51cb7), to(#006eff));
   background: -webkit-linear-gradient(bottom, #c51cb7 20%, #006eff 100%);
   background: -o-linear-gradient(bottom, #c51cb7 20%, #006eff 100%);
@@ -113,13 +114,34 @@ body .introduce input {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-size: 32px;
+  font-size: 22px;
   padding: 4vw 7vw;
   text-align: center;
   text-transform: uppercase;
-  -webkit-box-shadow: 0 0 3px 3px yellow;
-          box-shadow: 0 0 3px 3px yellow;
   color: #c51cb7;
+  font-weight: 700;
+  -webkit-animation: border 1s infinite linear;
+          animation: border 1s infinite linear;
+}
+
+body .introduce ::-webkit-input-placeholder {
+  color: #555;
+  font-weight: 700;
+}
+
+body .introduce :-ms-input-placeholder {
+  color: #555;
+  font-weight: 700;
+}
+
+body .introduce ::-ms-input-placeholder {
+  color: #555;
+  font-weight: 700;
+}
+
+body .introduce ::placeholder {
+  color: #555;
+  font-weight: 700;
 }
 
 body .page {
@@ -128,25 +150,24 @@ body .page {
   height: 100vh;
   max-width: 100%;
   padding: 5vh 5vw;
-  overflow: hidden;
   text-align: center;
 }
 
 @-webkit-keyframes grow {
   0% {
-    font-size: 55px;
+    font-size: 35px;
   }
   100% {
-    font-size: 75px;
+    font-size: 48px;
   }
 }
 
 @keyframes grow {
   0% {
-    font-size: 55px;
+    font-size: 35px;
   }
   100% {
-    font-size: 75px;
+    font-size: 48px;
   }
 }
 
