@@ -7,26 +7,27 @@ body
     background-color: #ddd
     font-family: arial
     .home
-        height: 300vh
+        height: 100vh
         background-color: rgb(0, 110, 255)
     .center
-            background: linear-gradient(180deg, rgb(197, 28, 183) 0%, rgb(0, 110, 255) 100%)
-            // border: 2px solid black
+            background: linear-gradient(180deg, rgb(197, 28, 183) 20%, rgb(0, 110, 255) 100%)
             width: 100%
+            height: 100vh
             position: fixed
-            top: 0
             left: 0
             display: flex
+            box-shadow: 0 0 3px 3px yellow
             flex-direction: column
             justify-content: center
             align-items: center
-            z-index: 1
-            transition: .3s
+            z-index: 2
+            transition: 2s
+            animation: home 1s ease-in both
             h1
                 font-size: $h1size
-                // opacity: 0
-                display: none
-                transition: .3s
+                text-transform: uppercase
+                animation: 
+                
             span
                 display: block
                 margin-top: 8vh
@@ -34,14 +35,13 @@ body
                 font-weight: 700
                 text-transform: uppercase
                 letter-spacing: 4px
-                color: rgb(231, 16, 213) 
+                color: rgb(213, 236, 8) 
                 text-decoration: overline
+                animation: grow 5s both, showH1 1.5s cubic-bezier(0.79, 2.17, 0.63, 0.98)
             a
                 margin-top: 10vh
-                // opacity: 0
-                display: none
-                transition: .2s
-                width: 30%
+                transition: .2s linear
+                width: 60%
                 text-align: center
                 font-size: $asize
                 text-decoration: none
@@ -50,18 +50,21 @@ body
                 border: 2px solid black
                 padding: 5px 20px
                 cursor: pointer
-                animation: border 1s infinite linear
+                background-color: black
+                color: yellow
+                animation: border 1s infinite linear, buttonshakes 2s infinite
                 &:hover 
                     background-color: black
                     color: rgb(197, 28, 183) 
     .introduce
+        position: relative
         left: 0
         top: 0
         height: 100vh
         width: 100%
-        display: none
-        min-height: 100vh  
-        background-color: red
+        // display: none
+        // background-color: red
+        background: linear-gradient(0deg, rgb(197, 28, 183) 20%, rgb(0, 110, 255) 100%)
         transition: 1s
         z-index: 1
         input
@@ -69,22 +72,59 @@ body
             top: 50%
             left: 50%
             transform: translate(-50%,-50%)
-            font-size: 40px
-            padding: 2vh 0
+            font-size: 32px
+            padding: 4vw 7vw
             text-align: center
             text-transform: uppercase
+            box-shadow: 0 0 3px 3px yellow
+            color: rgb(197, 28, 183)
     .page 
         display: none
         background-color: yellow
-        min-height: 100vh      
-        overflow-x: hidden  
+        height: 100vh
+        max-width: 100%
+        padding: 5vh 5vw
+        overflow: hidden
+        // overflow-x: hidden  
         text-align: center
         
+@keyframes grow
+    0%
+        font-size: 55px
+    100%
+        font-size: 75px
+@keyframes home
+    0%
+        top: -100%
+    100%
+        top: 0
+
+@keyframes showH1
+    0%
+        transform: translateX(-200%)
+    100%
+        transform: translateX(0%)
+        
+@keyframes buttonshakes
+    0%
+        transform: translateX(-5%)
+    2%
+        transform: translateX(5%)
+    4%
+        transform: translateX(-5%)
+    6%
+        transform: translateX(5%)
+    8%
+        transform: translateX(-5%)
+    9%
+        transform: translateX(0)
+    100%
+        transform: translateX(0)
         
 @keyframes border
     0%
-        box-shadow: 0 0 0 1px rgb(197, 28, 183)       
+        box-shadow: 0 0 0 1px yellow         
     50%
         box-shadow: 0 0 3px 10px rgb(197, 28, 183)
     100%
-        box-shadow: 0 0 0 1px rgb(197, 28, 183)            
+        box-shadow: 0 0 0 1px yellow            
