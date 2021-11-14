@@ -5,9 +5,16 @@
           box-sizing: 0;
 }
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
 body {
   background-color: #ddd;
   font-family: arial;
+  overflow-x: hidden;
 }
 
 body .home {
@@ -145,12 +152,85 @@ body .introduce ::placeholder {
 }
 
 body .page {
-  display: none;
-  background-color: yellow;
+  display: block;
   height: 100vh;
   max-width: 100%;
-  padding: 5vh 5vw;
   text-align: center;
+}
+
+body .page .about {
+  background: -webkit-gradient(linear, left bottom, left top, from(#ddd), to(yellow));
+  background: -webkit-linear-gradient(bottom, #ddd 0%, yellow 100%);
+  background: -o-linear-gradient(bottom, #ddd 0%, yellow 100%);
+  background: linear-gradient(0deg, #ddd 0%, yellow 100%);
+  background-padding-bottom: 10vh;
+}
+
+body .page .about h1 {
+  padding: 15vh 0;
+  text-transform: uppercase;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+body .page .about article {
+  margin-bottom: 30px;
+}
+
+body .page .about article h2 {
+  background-color: royalblue;
+  padding: 20px 0 20px 10vw;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+body .page .about article img {
+  float: left;
+  padding: 0 30px;
+}
+
+body .page .about article p {
+  font-size: 22px;
+  padding-right: 40px;
+  line-height: 55px;
+}
+
+.art1,
+.art2,
+.art4,
+.art3 {
+  -webkit-transition: 0.4s cubic-bezier(0.72, 1.95, 1, 1);
+  -o-transition: 0.4s cubic-bezier(0.72, 1.95, 1, 1);
+  transition: 0.4s cubic-bezier(0.72, 1.95, 1, 1);
+  border: 2px solid black;
+}
+
+.art2,
+.art4 {
+  -webkit-transform: translateX(-150%);
+      -ms-transform: translateX(-150%);
+          transform: translateX(-150%);
+}
+
+.art1,
+.art3 {
+  -webkit-transform: translateX(150%);
+      -ms-transform: translateX(150%);
+          transform: translateX(150%);
+}
+
+.art1.active,
+.art2.active,
+.art3.active,
+.art4.active {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
 }
 
 @-webkit-keyframes grow {

@@ -2,10 +2,16 @@
     margin: 0
     padding: 0
     box-sizing: 0
-     
+
+.clearfix::after 
+    content: ""
+    clear: both
+    display: block
+
 body
     background-color: #ddd
     font-family: arial
+    overflow-x: hidden
     .home
         height: 100vh
         background-color: rgb(0, 110, 255)
@@ -87,14 +93,139 @@ body
             font-weight: 700
             
     .page 
-        display: none
-        background-color: yellow
+        display: block
         height: 100vh
         max-width: 100%
-        padding: 5vh 5vw
-        // overflow: hidden
-        // overflow-x: hidden  
         text-align: center
+        .about 
+            background: linear-gradient(0deg, #ddd 0%, yellow 100%)
+             padding-bottom: 10vh
+            h1 
+                padding: 15vh 0
+                text-transform: uppercase
+                font-size: 50px
+                text-align: center
+                margin-bottom: 40px
+            article 
+                margin-bottom: 30px    
+                h2 
+                    background-color: royalblue
+                    padding: 20px 0 20px 10vw
+                    font-size: 30px
+                    text-transform: uppercase
+                    letter-spacing: 3px
+                    font-weight: bold
+                    margin-bottom: 20px
+                    color: #ddd
+                img 
+                    float: left
+                    padding: 0 30px
+                p 
+                    font-size: 22px
+                    padding-right: 40px
+                    line-height: 55px
+.art1,
+.art2,
+.art4,
+.art3 
+    transition: .4s cubic-bezier(0.72, 1.95, 1, 1)
+    border: 2px solid black
+
+
+
+.art2,
+.art4 
+    transform: translateX(-150%)
+
+
+.art1,
+.art3 
+    transform: translateX(150%)
+
+
+.art1.active,
+.art2.active,
+.art3.active,
+.art4.active 
+    transform: translateX(0)
+
+// .fas 
+//     display: none
+
+
+// .fas.show 
+//     display: block
+//     line-height: 50px
+
+
+// .burger 
+//     position: fixed
+//     top: 10%
+//     right: calc(5vw - 25px)
+//     font-size: 30px
+//     width: 50px
+//     height: 50px
+//     font-weight: 700
+//     text-align: center
+//     transition: .4s
+//     cursor: pointer
+//     z-index: 1
+
+
+// .burger.show 
+//     transform: rotate(360deg)
+//     background-color: black
+//     color: white
+//     box-shadow: 0 0 0 10px white, 0 0 0 12px black
+
+
+// aside 
+//     position: fixed
+//     top: 0
+//     bottom: 0
+//     left: -311px
+//     width: 300px
+//     background-color: black
+//     transition: .4s
+//     border: 2px solid yellow
+//     box-shadow: 0 0 3px 6px black, 0 0 3px 8px yellow
+//     z-index: 1
+
+
+// aside.show 
+//     left: 0px
+
+
+// ul 
+//     display: flex
+//     height: 100vh
+//     flex-direction: column
+//     background-color: red
+//     align-content: space-around
+//     list-style: none
+
+
+// li 
+//     background-color: black
+//     flex-grow: 1
+//     display: flex
+//     flex-direction: column
+//     justify-content: center
+
+
+// a 
+//     display: block
+//     padding: 5vh 0
+//     background-color: yellow
+//     text-align: center
+//     border-top: 2px solid black
+//     border-bottom: 2px solid black
+//     font-size: 2rem
+//     color: black
+//     font-family: arial
+//     text-decoration: none
+//     text-transform: uppercase
+
         
 @keyframes grow
     0%
